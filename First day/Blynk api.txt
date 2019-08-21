@@ -1,0 +1,16 @@
+test : function(){
+          var request = new XMLHttpRequest();
+
+            //request.open('GET', 'http://blynk-cloud.com/4ae3851817194e2596cf1b7103603ef8/update/D7?value=1');
+            request.open('GET', 'https://blynk-cloud.com/4ae3851817194e2596cf1b7103603ef8/get/D7');
+
+            request.onreadystatechange = function () {
+            if (this.readyState === 4) {
+            console.log('Status:', this.status);
+            console.log('Headers:', this.getAllResponseHeaders());
+            console.log('Body:', this.responseText);
+            }
+        };
+
+        request.send();
+      }
